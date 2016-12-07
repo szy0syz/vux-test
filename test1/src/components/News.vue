@@ -1,18 +1,16 @@
 <template>
-  <div class="vux-demo">
-    <h1>{{ msg }}</h1>
-  </div>
-  <swiper :list="list" :auto="true" :loop="true"></swiper>
+  <x-header :left-options="{showBack: false}">云 农 股 份</x-header>
+  <swiper :list="list" :auto="true" :loop="true" style="margin:2px;"></swiper>
   <group title="新闻列表">
     <scroller lock-x scrollbar-y use-pullup :pullup-config="pullupConfig" height="auto" @pullup:loading="load2">
-      <cell v-for="val in newsList" :title="val.title" is-link :inline-desc="val.inline"></cell>
+      <cell v-for="val in newsList" :title="val.title" is-link :inline-desc="val.inline" :link="{path:'/detail/'+val.id}"></cell>
     </scroller>
   </group>
   <toast :show.sync="show2" :time="1500" type="text">全部加载完成</toast>
 </template>
 
 <script>
-import {Group, Cell, Swiper, Scroller, Toast} from 'vux/src/components'
+import {Group, Cell, Swiper, Scroller, Toast, XHeader} from 'vux/src/components'
 
 export default {
   components: {
@@ -20,7 +18,8 @@ export default {
     Cell,
     Swiper,
     Scroller,
-    Toast
+    Toast,
+    XHeader
   },
   data () {
     return {
@@ -28,7 +27,6 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: '云农股份',
       list: [{
         url: 'http://jerryshi.com',
         img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb1.jpg',
