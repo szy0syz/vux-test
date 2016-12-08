@@ -1,6 +1,6 @@
 <template>
   <x-header :left-options="{showBack: false}">云 农 股 份</x-header>
-  <swiper :list="list" :auto="true" :loop="true" style="margin:2px;"></swiper>
+  <swiper :list="list" :auto="true" :loop="true" style="margin:0px;" :aspect-ratio="1600/2588"></swiper>
   <group title="新闻列表">
     <scroller lock-x scrollbar-y use-pullup :pullup-config="pullupConfig" height="auto" @pullup:loading="load2">
       <cell v-for="val in newsList" :title="val.title" is-link :inline-desc="val.inline" :link="{path:'/detail/'+val.id}"></cell>
@@ -29,16 +29,16 @@ export default {
       // its initial state.
       list: [{
         url: 'http://jerryshi.com',
-        img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb1.jpg',
-        title: '如何手制一份秋意的茶？'
+        img: 'http://ofx24fene.bkt.clouddn.com/img/test/IMG_1666_Jc.jpg',
+        title: '公司年会'
       }, {
         url: 'http://jerryshi.com',
-        img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb2.jpg',
-        title: '茶包VS原叶茶'
+        img: 'http://ofx24fene.bkt.clouddn.com/img/test/IMG_0865_Jc.jpg',
+        title: '全国化肥高端会议'
       }, {
         url: 'http://jerryshi.com',
-        img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb3.jpg',
-        title: '播下茶籽，明春可发芽？'
+        img: 'http://ofx24fene.bkt.clouddn.com/img/test/IMG_1360_Jc.jpg',
+        title: '南京千人峰会'
       }],
       newsList: [{
         id: '111',
