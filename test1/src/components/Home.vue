@@ -40,7 +40,7 @@ export default {
         img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb1.jpg',
         title: '如何手制一份秋意的茶？'
       }, {
-        url: 'http://mp.weixin.qq.com/s?__biz=MzAxNjU0MDYxMg==&ampmid=400160890&ampidx=1&ampsn=29ef02af25793a11a3f6aec92bfb46c1&ampscene=19#wechat_redirect',
+        url: 'http://jerryshi.com',
         img: 'http://ofx24fene.bkt.clouddn.com/img/2016/lb2.jpg',
         title: '茶包VS原叶茶'
       }, {
