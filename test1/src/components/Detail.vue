@@ -1,8 +1,11 @@
 <template>
-  <x-header>xxxx</x-header>
+  <x-header>云农股份新闻中心</x-header>
   <div>
-  	<p>{{title}}</p>
-  	<p>{{$route.params | json}}</p>
+  	<p>{{news.title}}</p>
+    <hr>
+  	<div>
+      {{{news.content}}}
+    </div>
   </div>
 </template>
 <script>
@@ -11,15 +14,19 @@ export default {
   components: {
     XHeader
   },
-  init: function () {
-    this.$http.get('http://localhost:8088/news/5857a16759508cf25053cb93').then(function (res) {
-        this.title = res.data.title
-    }.bind(this))
-  },
   data: function () {
     return ({
-      title: 'null'
+      news: {
+        title: '',
+        content: ''
+      }
     })
+  },
+  init: function () {
+    this.$http.get('http://localhost:8088/news/' + this.$route.params.id).then(function (res) {
+        this.news = res.data
+        console.log(this.news.title)
+    }.bind(this))
   }
 }
 </script>
